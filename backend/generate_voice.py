@@ -1,4 +1,4 @@
-
+import os
 import sys
 import audio2face_pb2
 import audio2face_pb2_grpc
@@ -6,13 +6,17 @@ import requests
 import numpy as np
 import asyncio
 
+# Set environment variables
+elevenlabs_api_key = os.getenv('ELEVENLABS_API_KEY')
+voice_id = os.getenv('VOICE_ID')
+
 # Define the URL and headers for the API request
-elv_url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}/stream"
+elv_url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/stream"
 
 headers = {
     "accept": "*/*",
     "Content-Type": "application/json",
-    "xi-api-key": ELEVENLABS_API_KEY
+    "xi-api-key": elevenlabs_api_key
 }
 
 data = {
