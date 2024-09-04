@@ -8,14 +8,29 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 
 
 ## Features
-- Text Input: Users can type messages directly into the chatbox and submit them by pressing Enter.
-- Voice Input: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
-- Speech to Text: Converts user voice input to text components using OpenAI Speech-To-Text functionality and insert them in the chat box.
-- User Input Submission: A Send button directs user inputs to the OpenAI Assistants API for processing.
-- WebSockets Integration: Utilizes WebSockets to transmit the AI-generated responses from script.js to generate_voice.py for further processing.
-- Voice Synthesis: Implements voice generation using a fine-tuned voice model via the ElevenLabs TTS API.
-- Real-Time Facial Animation: Sends voice chunks to NVIDIA Audio2Face, which produce natural and synchronized facial animations corresponding to the generated voice.
-- WebRTC Streaming: Streams the animated facial model to a locally hosted website using WebRTC, providing real-time visualization of the responses.
+1. **Text Input**: Users can type messages directly into the chatbox and submit them by pressing Enter.
+    ![text_demo](https://github.com/user-attachments/assets/5c88fad8-e42e-4e76-845a-42adf2a46d92)
+
+2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
+
+
+3. **Speech to Text**: Converts user voice input to text components using OpenAI Speech-To-Text functionality and insert them in the chat box.
+
+
+4. **User Input Submission**: A Send button directs user inputs to the OpenAI Assistants API for processing.
+
+
+5. **WebSockets Integration**: Utilizes WebSockets to transmit the AI-generated responses from script.js to generate_voice.py for further processing.
+
+6. **Voice Synthesis**: Implements voice generation using a fine-tuned voice model via the ElevenLabs TTS API.
+
+7. **Real-Time Facial Animation**: Sends voice chunks to NVIDIA Audio2Face, which produce natural and synchronized facial animations corresponding to the generated voice.
+
+8. **WebRTC Streaming**: Streams the animated facial model to a locally hosted website using WebRTC, providing real-time visualization of the responses.
+
+9. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
+    ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
+
 
 ## Usage
 Clone the Repository:
