@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+        <meta name="description" content="Omniverse: WebRTC Livestream Player" />
+        <title>FaceChat</title>
+
+        <link rel="stylesheet" href="css/bootstrap-5.0.0.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body class="bg-dark text-light text-center">
+        <div id="stream">
+            <div id="logs"></div>
+            <div id="video-container">
+                <video id="remote-video" width="100%" height="100%" style="position: fixed; top: 0; left: 0;" playsinline tabindex="-1"></video>
+                <audio id="remote-audio"></audio>
+            </div>
+            <div id="streamtransition" class="bottom-bar">
+                <input type="button" value="◼ &nbsp;Stop" id="stop" class="btn btn-secondary" disabled />
+            </div>
+        </div>
+        <div id="overlay">
+            <input type="button" value="▷" id="play" class="btn btn-danger btn-lg" disabled />
+        </div>
+        
+        <div class="text-box">
+            <input type="text" class="text-input" placeholder="Type your message...">
+            <div class="buttons">
+                <button class="button send-btn" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                <button class="button speak-btn" id="speak-btn"><i class="fas fa-microphone"></i></button>
+                <button class="button log-btn" id="log-btn"><i class="fas fa-eye"></i></button>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="js/bootstrap-5.0.0.bundle.min.js"></script>
+        <script type="text/javascript" src="js/kit-player.js"></script>
+        <script type="text/javascript">
+            (() => {
+                /**
+                 * Show the given HTML button element.
+                 *
+                 * @param {HTMLInputElement} buttonElement HTML button element to show.
+                 */
+                function showButton(buttonElement) {
+                    buttonElement.removeAttribute('disabled');
+                    buttonElement.classList.remove('d-none');
+                }
+
+                /**
+                 * Hide the given HTML button element.
+                 *
+                 * @param {HTMLInputElement} buttonElement HTML button element to hide.
+                 */
+                function hideButton(buttonElement) {
+                    buttonElement.setAttribute('disabled', 'disabled');
+                    buttonElement.classList.add('d-none');
+                }
+
+                // Hide the Stop button
+                document.addEventListener('DOMContentLoaded', () => {
+                const stopButton = document.getElementById('stop');
+                    hideButton(stopButton);
+                });
+
+                /**
+                 * Enable the given HTML button element.
+                 *
+                 * @param {HTMLInputElement} buttonElement HTML button element to enable.
+                 */
+                function enableButton(buttonElement) {
+                    buttonElement.removeAttribute('disabled');
+                }
+
+                /**
+                 * Disable the given HTML button element.
+                 *
+                 * @param {HTMLInputElement} buttonElement HTML button element to disable.
+                 */
+                function disableButton(buttonElement) {
+                    buttonElement.setAttribute('disabled', 'disabled');
+                }
+
+                /**
+                 * Validate if the IP of the WebSocket server to connect to is supported.
+                 *
+                 * @return {boolean} `true` if a valid IP address for a WebSocket server was found, `false` otherwise.
+                 */
+                function isValidStreamingServer() {
+                    const UNSUPPORTED_IPS = [null, '127.0.0.1'];
+
+                    const urlSearchParams = new URLSearchParams(window.location.search);
+                    const serverIP = urlSearchParams.get('server');
+
+                    return !UNSUPPORTED_IPS.includes(serverIP);
+                }
+
+                /**
+                 * Display an informative message letting Users know that no valid streaming server was indentified.
+                 */
+                function displayInvalidStreamingServerMessage() {
+                    const videoContainerElement = document.getElementById('video-container');
+                    const remoteVideoElement = document.getElementById('remote-video');
+                    if (videoContainerElement !== null && remoteVideoElement !== null) {
+                        const videoWidth = remoteVideoElement.getAttribute('width');
+                        const videoHeight = remoteVideoElement.getAttribute('height');
+
+                        videoContainerElement.style.width = `${videoWidth}px`;
+                        videoContainerElement.style.height =`${videoHeight}px`;
+                        videoContainerElement.classList.add('invalid-server');
+                        videoContainerElement.innerHTML = [
+                            '<div>',
+                            '<h5><strong>Sorry!</strong> <small>We were unable to automatically find an appropriate streaming server for you.</small></h5>',
+                            '<br />',
+                            '<p>Please provide your internal IP address or the one of the server you are attempting to reach as the <code>?server=</code> parameter of this page.</p>',
+                            '</div>',
+                        ].join('');
+                    }
+                }
+
+
+                /**
+                 * Register event listeners once all elements on the page have been loaded.
+                 */
+                document.addEventListener('DOMContentLoaded', async () => {
+                    const playElement = document.getElementById('play');
+                    const stopElement = document.getElementById('stop');
+                    let isPlaying = false;
+
+                    // Wait for the application to be initialized before allowing
+                    // the User to press the "Play" button:
+                    const kitWebRTCApp = await SetupWebRTCPlayer({
+                        videoElementId: 'remote-video',
+                        audioElementId: 'remote-audio',
+                        playElement,
+                        stopElement,
+                    });
+                    enableButton(playElement);
+
+                    // Update the UI by disabling/enabling the start/stop buttons:
+                    playElement.addEventListener('click', () => {
+                        if (isPlaying) {
+                            hideButton(playElement);
+                            enableButton(stopElement);
+                        } else {
+                            disableButton(playElement);
+                            hideButton(playElement);
+                            enableButton(stopElement);
+                        }
+                        isPlaying = !isPlaying;
+                    });
+
+                    stopElement.addEventListener('click', () => {
+                        if (isPlaying) {
+                            showButton(playElement);
+                            disableButton(stopElement);
+                        } else {
+                            enableButton(playElement);
+                            showButton(playElement);
+                            disableButton(stopElement);
+                        }
+                        isPlaying = !isPlaying;
+                    });
+                });
+            })();
+        </script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
