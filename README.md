@@ -32,19 +32,13 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 
 
 ## Usage
-Clone the Repository:
+1. Clone the Repository: git clone https://github.com/yourusername/FaceChat.git
 
-bash
-Copy code
-git clone https://github.com/yourusername/FaceChat.git
-Install Dependencies:
-Follow the installation instructions for required packages and libraries.
+2. Install Dependencies: Follow the installation instructions for required packages and libraries.
 
-Run the Application:
-Start the application by following the provided steps in the repository.
+3. Run the Application: Start the application by following the provided steps in the repository.
 
-Interact with FaceChat:
-Choose between text or voice input and observe the real-time facial animation on the local web interface.
+4. Interact with FaceChat: Choose between text or voice input and observe the real-time facial animation on the local web interface.
 
 ## Future Enhancements
 - Enhanced Mesh Model: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
