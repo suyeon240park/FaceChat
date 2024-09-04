@@ -3,11 +3,7 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 
 ## Demo
 [Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
-[![Link to Video Demo](https://img.youtube.com/vi/jsKBskNUAYM&t=27s/maxresdefault.jpg)](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
-
-[![Watch the video](https://img.youtube.com/vi/jsKBskNUAYM&t=27s/maxresdefault.jpg)](https://youtu.be/jsKBskNUAYM&t=27s)
-
-[![Alt text](https://img.youtube.com/vi/jsKBskNUAYM/0.jpg)](https://www.youtube.com/watch?v=jsKBskNUAYM)
+[![Thumbnail](https://img.youtube.com/vi/jsKBskNUAYM/0.jpg)](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
 
 jsKBskNUAYM&t=27s
