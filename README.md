@@ -2,7 +2,7 @@
 FaceChat is an advanced AI-driven application that integrates chatbot functionality, text-to-speech (TTS), and real-time facial animation, leveraging NVIDIA's Audio2Face technology. This comprehensive pipeline allows users to interact with an AI chatbot through text or voice, with responses visualized via synchronized facial animation. Designed to enhance emotional support, FaceChat is particularly beneficial for individuals experiencing loneliness and for seniors who may find reading text or adapting to fast-changing technologies challenging. The application also has potential applications across diverse industries, including healthcare, customer service, and entertainment.
 
 ## Demo
-Link to Video Demo
+[Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
 
 ## Features
 - Text Input: Users can type messages directly into the chatbox and submit them by pressing Enter.
