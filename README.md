@@ -4,12 +4,11 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 ## Demo
 [Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
 
-[![Thumbnail](https://img.youtube.com/vi/jsKBskNUAYM/0.jpg)](https://www.youtube.com/watch?v=jsKBskNUAYM)
+![text_demo](https://github.com/user-attachments/assets/5c88fad8-e42e-4e76-845a-42adf2a46d92)
 
 
 ## Features
 1. **Text Input**: Users can type messages directly into the chatbox and submit them by pressing Enter.
-    ![text_demo](https://github.com/user-attachments/assets/5c88fad8-e42e-4e76-845a-42adf2a46d92)
 
 2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
 
