@@ -44,9 +44,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 **2. Activate the virtual enviornment**\
     ```
     python -m venv .venv
-    ```
     
-    ```
     .venv\Scripts\activate
     ```
     
