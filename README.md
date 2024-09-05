@@ -82,7 +82,7 @@ Access the local web interface to interact with the AI model and observe real-ti
 ## Future Enhancements
 - **Enhanced Mesh Model**: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
 - **Full-Body Animation**: Incorporate head movements and full body gestures.
-- **Custom ML Model Development**: Develop a machine learning model similar to Audio2Face, trained on large video datasets.
+- **ML Model Development**: Develop a custom Audio2Human ML model similar to Audio2Face, trained on large video datasets.
 - **Cloud Deployment**: Deploy the application on the cloud to increase accessibility and scalability.
 
 ## License
