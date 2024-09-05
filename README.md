@@ -28,23 +28,59 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 8. **WebRTC Streaming**: Streams the animated facial model to a locally hosted website using WebRTC, providing real-time visualization of the responses.
 
 9. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
+
     ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
 
 
 ## Usage
-1. Clone the Repository: git clone https://github.com/yourusername/FaceChat.git
-
-2. Activate virtual enviornments
+1. Clone the Repository
+Open your terminal and clone the repository.
 ```
-.venv\Scripts\activate
+git clone https://github.com/suyeon240park/FaceChat.git
 ```
 
-4. Install Dependencies: Follow the installation instructions for required packages and libraries.
-"C:\Users\lilyl\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py"
-C:\Users\lilyl\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8
-5. Run the Application: Start the application by following the provided steps in the repository.
+2. Activate the virtual enviornment
+First, create a new virtual environment. Install python if needed.
+```
+python -m venv .venv
+```
+    Activate the virtual environment.
+    For window,
+    ```
+    .venv\Scripts\activate
+    ```
 
-6. Interact with FaceChat: Choose between text or voice input and observe the real-time facial animation on the local web interface.
+    For macOS or Linux,
+    ```
+    source .venv/bin/activate
+    ```
+    
+3. Install Dependencies
+```
+pip install -r requirements.txt
+```
+
+4. Install NVDIA Omniverse Launcher
+https://www.nvidia.com/en-us/omniverse/
+
+5. Install Audio2Face from NVDIA Omniverse Application
+   
+6. Move files
+Copy backend folder and replace streaming_server folder at the given directory.
+C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py
+
+Copy frontend folder and replace web folder at the given directory.
+C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8
+
+6. Open NVDIA Audio2Face application and set a streaming model.
+
+7. Open a localhost website by running
+```
+python -m http.server
+```
+
+8. Interact with FaceChat
+Interact with the AI model and observe the real-time facial animation on the local web interface.
 
 ## Future Enhancements
 - Enhanced Mesh Model: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
