@@ -40,6 +40,7 @@ Open the terminal in Visual Studio and run the following command:<br />
 
 ```bash
 git clone https://github.com/suyeon240park/FaceChat.git
+```
 
 **2. Activate the Virtual Environment**<br />
 
