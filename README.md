@@ -1,4 +1,4 @@
-# FaceChat
+# FaceChat: Bridging AI Interaction with Real-Time Facial Animation
 FaceChat is an advanced AI-driven application that integrates chatbot functionality, text-to-speech (TTS), and real-time facial animation using NVIDIA's Audio2Face technology. This comprehensive pipeline allows users to interact with an AI chatbot through text or voice, with responses visualized via synchronized facial animation.
 
 While chatbots are widely used with the development of Artificial Intelligence, face-to-face interactions through AI are still emerging; FaceChat is developed to address this gap. Originally designed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness in modern times. While still in its early stages, FaceChat explores the potential of face-to-face conversational AI in fields like healthcare, customer service, and entertainment.
