@@ -36,8 +36,6 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 ## Usage
 **1. Clone the Repository**
-    
-    Open your terminal and clone the repository.
     ```
     git clone https://github.com/suyeon240park/FaceChat.git
     ```
