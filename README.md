@@ -50,8 +50,7 @@ Open your terminal and clone the repository.
     pip install -r requirements.txt
     ```
 
-4. Install NVDIA Omniverse Launcher
-    https://www.nvidia.com/en-us/omniverse/
+4. Install NVDIA Omniverse Launcher [here](https://www.nvidia.com/en-us/omniverse/)
 
 5. Install Audio2Face from NVDIA Omniverse Application
    
