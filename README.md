@@ -13,7 +13,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
 
-    ![voice](https://github.com/user-attachments/assets/4a9f2682-9ed2-4349-9ba8-b0056380e840)
+    ![voice](https://github.com/user-attachments/assets/9eaeb275-b00c-4c4e-b914-2c765c92b187)
 
 
 4. **Speech to Text**: Converts user voice input to text components using OpenAI Speech-To-Text functionality and insert them in the chat box.
@@ -21,7 +21,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 5. **User Input Submission**: A Send button or pressing Enter directs user inputs to the OpenAI Assistants API for processing.
 
-    ![send](https://github.com/user-attachments/assets/5e81d4ce-a30e-4f65-a6f6-6672dee42c53)
+    ![send](https://github.com/user-attachments/assets/95ac17a4-d6a0-4ab4-a5eb-6f0b503e117d)
 
 
 6. **WebSockets Integration**: Utilizes WebSockets to transmit the AI-generated responses from script.js to generate_voice.py for further processing.
