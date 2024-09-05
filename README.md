@@ -35,64 +35,42 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 
 ## Usage (Window)
-**1. Clone the Repository**
-    <br />
-    Open the terminal in Visual Studio and type the following command.
-    <br />
+**1. Clone the Repository**<br />
+    Open the terminal in Visual Studio and type the following command.<br />
     ```
     git clone https://github.com/suyeon240park/FaceChat.git
     ```
     <br />
-    <br />
-**2. Activate the virtual enviornment**
-    <br />
+**2. Activate the virtual enviornment**<br />
     ```
     python -m venv .venv<br />
     .venv\Scripts\activate
     ```
     <br />
-    <br />
-**3. Install Dependencies**
-    <br />
+**3. Install Dependencies**<br />
     ```
     pip install -r requirements.txt
     ```
     <br />
-    <br />
-**4. Install NVDIA Omniverse Launcher [here](https://www.nvidia.com/en-us/omniverse/)**
-    <br />
+**4. Install NVDIA Omniverse Launcher [here](https://www.nvidia.com/en-us/omniverse/)** <br />
     
-**5. Install Audio2Face from NVDIA Omniverse Application**
-    <br />
-
-
-
-
-
-
-
-
-
+**5. Install Audio2Face from NVDIA Omniverse Application** <br />
     
+**6. Move files** <br />
+    Copy backend folder and replace streaming_server folder at the given directory.<br />
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\<br />
     
-**6. Move files**
-    <br />
-    Copy backend folder and replace streaming_server folder at the given directory.
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\\
-    <br />
-    Copy frontend folder and replace web folder at the given directory.\
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\
-    <br />
+    Copy frontend folder and replace web folder at the given directory.<br />
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\<br />
+    
 **6. Open NVDIA Audio2Face application and set a streaming model.**
     <br />
-**7. Open a localhost website by running**
-    <br />
+**7. Open a localhost website by running**<br />
     ```
     python -m http.server
     ```
     <br />
-    <br />
-**8. Interact with FaceChat**
+**8. Interact with FaceChat**<br />
     Interact with the AI model and observe the real-time facial animation on the local web interface.
 
 ## Future Enhancements
