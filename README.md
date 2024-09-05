@@ -3,10 +3,12 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 
 While chatbots are widely used with the development of Artificial Intelligence, face-to-face interactions through AI are still emerging; FaceChat is developed to address this gap. Originally designed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness in modern times. While still in its early stages, FaceChat explores the potential of face-to-face conversational AI in fields like healthcare, customer service, and entertainment.
 
+
 ## Demo
 [Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
 [![text_demo](https://github.com/user-attachments/assets/39155820-a99e-44c1-89a7-0098ed3260a1)](https://www.youtube.com/watch?v=jsKBskNUAYM)
+
 
 ## Features
 1. **Text Input**: Users can type messages directly into the chatbox
@@ -81,12 +83,12 @@ python -m http.server
 Access the local web interface to interact with the AI model and observe real-time facial animation.
 
 
-
 ## Future Enhancements
 - **Enhanced Mesh Model**: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
 - **Full-Body Animation**: Incorporate head movements and full body gestures.
 - **ML Model Development**: Develop a custom Audio2Human ML model similar to Audio2Face, trained on large video datasets.
 - **Cloud Deployment**: Deploy the application on the cloud to increase accessibility and scalability.
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
