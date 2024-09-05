@@ -61,8 +61,10 @@ While chatbots are widely used with the development of Artificial Intelligence, 
     <br />
 **4. Install NVDIA Omniverse Launcher [here](https://www.nvidia.com/en-us/omniverse/)**
     <br />
+    
 **5. Install Audio2Face from NVDIA Omniverse Application**
     <br />
+    
 **6. Move files**
     <br />
     Copy backend folder and replace streaming_server folder at the given directory.
