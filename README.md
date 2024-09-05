@@ -43,8 +43,15 @@ git clone https://github.com/suyeon240park/FaceChat.git
 ```
 
 **2. Activate the Virtual Environment**<br />
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
 
 **3. Install Dependencies**<br />
+```bash
+pip install -r requirements.txt
+```
 
 **4. Install NVIDIA Omniverse Launcher**<br />
 Download and install it [here](https://www.nvidia.com/en-us/omniverse/).
@@ -63,7 +70,9 @@ Set up a streaming model as instructed in the application.
 
 **8. Start the Local Server**<br />
 Run the following command to start a local server:<br />
-
+```bash
+python -m http.server
+```
 
 **9. Interact with FaceChat**<br />
 Access the local web interface to interact with the AI model and observe real-time facial animation.
