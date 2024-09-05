@@ -18,6 +18,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 
 4. **User Input Submission**: A Send button directs user inputs to the OpenAI Assistants API for processing.
+
 ![send](https://github.com/user-attachments/assets/5e81d4ce-a30e-4f65-a6f6-6672dee42c53)
 
 
