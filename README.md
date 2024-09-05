@@ -12,6 +12,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 1. **Text Input**: Users can type messages directly into the chatbox
 
 2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
+
     ![voice](https://github.com/user-attachments/assets/4a9f2682-9ed2-4349-9ba8-b0056380e840)
 
 
