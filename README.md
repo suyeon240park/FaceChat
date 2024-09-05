@@ -35,43 +35,23 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 
 ## Usage (Window)
-**1. Clone the Repository**<br />
-    Open the terminal in Visual Studio and type the following command.<br />
-    ```
-    git clone https://github.com/suyeon240park/FaceChat.git
-    ```
-    <br />
-**2. Activate the virtual enviornment**<br />
-    ```
-    python -m venv .venv<br />
-    .venv\Scripts\activate
-    ```
-    <br />
-**3. Install Dependencies**<br />
-    ```
-    pip install -r requirements.txt
-    ```
-    <br />
-**4. Install NVDIA Omniverse Launcher [here](https://www.nvidia.com/en-us/omniverse/)** <br />
-    
-**5. Install Audio2Face from NVDIA Omniverse Application** <br />
-    
-**6. Move files** <br />
-    Copy backend folder and replace streaming_server folder at the given directory.<br />
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\<br />
-    
-    Copy frontend folder and replace web folder at the given directory.<br />
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\<br />
-    
-**6. Open NVDIA Audio2Face application and set a streaming model.**
-    <br />
-**7. Open a localhost website by running**<br />
-    ```
-    python -m http.server
-    ```
-    <br />
-**8. Interact with FaceChat**<br />
-    Interact with the AI model and observe the real-time facial animation on the local web interface.
+1. Clone the Repository<br /> Open the terminal in Visual Studio and run the following command:<br /> bash git clone https://github.com/suyeon240park/FaceChat.git
+
+2. Activate the Virtual Environment<br /> bash python -m venv .venv .venv\Scripts\activate
+
+3. Install Dependencies<br /> bash pip install -r requirements.txt
+
+4. Install NVIDIA Omniverse Launcher<br /> Download and install it here.
+
+5. Install Audio2Face via NVIDIA Omniverse Application<br /> Follow the installation instructions provided within the Omniverse Application.
+
+6. Move Files<br /> - Copy the backend folder and replace the streaming_server folder in the following directory:<br /> C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\<br /> - Copy the frontend folder and replace the web folder in the following directory:<br /> C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\
+
+7. Open NVIDIA Audio2Face Application<br /> Set up a streaming model as instructed in the application.
+
+8. Start the Local Server<br /> Run the following command to start a local server:<br /> bash python -m http.server
+
+9. Interact with FaceChat<br /> Access the local web interface to interact with the AI model and observe real-time facial animation.
 
 ## Future Enhancements
 - **Enhanced Mesh Model**: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
