@@ -35,49 +35,39 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 ## Usage
 1. Clone the Repository
 Open your terminal and clone the repository.
-```
-git clone https://github.com/suyeon240park/FaceChat.git
-```
+    ```
+    git clone https://github.com/suyeon240park/FaceChat.git
+    ```
 
 2. Activate the virtual enviornment
-First, create a new virtual environment. Install python if needed.
-```
-python -m venv .venv
-```
-    Activate the virtual environment.
-    For window,
     ```
+    python -m venv .venv
     .venv\Scripts\activate
-    ```
-
-    For macOS or Linux,
-    ```
-    source .venv/bin/activate
     ```
     
 3. Install Dependencies
-```
-pip install -r requirements.txt
-```
+    ```
+    pip install -r requirements.txt
+    ```
 
 4. Install NVDIA Omniverse Launcher
-https://www.nvidia.com/en-us/omniverse/
+    https://www.nvidia.com/en-us/omniverse/
 
 5. Install Audio2Face from NVDIA Omniverse Application
    
 6. Move files
-Copy backend folder and replace streaming_server folder at the given directory.
-C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py
-
-Copy frontend folder and replace web folder at the given directory.
-C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8
+    Copy backend folder and replace streaming_server folder at the given directory.
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py
+    
+    Copy frontend folder and replace web folder at the given directory.
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8
 
 6. Open NVDIA Audio2Face application and set a streaming model.
 
 7. Open a localhost website by running
-```
-python -m http.server
-```
+    ```
+    python -m http.server
+    ```
 
 8. Interact with FaceChat
 Interact with the AI model and observe the real-time facial animation on the local web interface.
