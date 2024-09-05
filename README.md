@@ -35,7 +35,8 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 
 ## Usage
-**1. Clone the Repository**
+**1. Clone the Repository**\
+    Open the terminal in Visual Studio and type the following command.\
     ```
     git clone https://github.com/suyeon240park/FaceChat.git
     ```
