@@ -61,9 +61,9 @@ Follow the installation instructions provided within the Omniverse Application.
 
 **6. Move Files**<br />
 - Copy the `backend` folder and replace the `streaming_server` folder in the following directory:<br />
-  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\`<br />
+  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server`<br />
 - Copy the `frontend` folder and replace the `web` folder in the following directory:<br />
-  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\`
+  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web`
 
 **7. Open NVIDIA Audio2Face Application**<br />
 Set up a streaming model as instructed in the application.
