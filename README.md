@@ -36,6 +36,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 ## Usage (Window)
 **1. Clone the Repository**
+    <br />
     Open the terminal in Visual Studio and type the following command.
     <br />
     ```
