@@ -34,20 +34,20 @@ While chatbots are widely used with the development of Artificial Intelligence, 
     ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
 
 
-## Usage
+## Usage (Window)
 **1. Clone the Repository**\
     Open the terminal in Visual Studio and type the following command.\
     ```
     git clone https://github.com/suyeon240park/FaceChat.git
     ```
 
-**2. Activate the virtual enviornment**
+**2. Activate the virtual enviornment**\
     ```
-    python -m venv .venv
+    python -m venv .venv\
     .venv\Scripts\activate
     ```
     
-**3. Install Dependencies**
+**3. Install Dependencies**\
     ```
     pip install -r requirements.txt
     ```
@@ -56,23 +56,21 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 **5. Install Audio2Face from NVDIA Omniverse Application**
    
-**6. Move files**
-
-    Copy backend folder and replace streaming_server folder at the given directory.
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server
+**6. Move files**\
+    Copy backend folder and replace streaming_server folder at the given directory.\
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\\
     
-    Copy frontend folder and replace web folder at the given directory.
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web
+    Copy frontend folder and replace web folder at the given directory.\
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web\
 
 **6. Open NVDIA Audio2Face application and set a streaming model.**
 
-**7. Open a localhost website by running**
+**7. Open a localhost website by running**\
     ```
     python -m http.server
     ```
 
-**8. Interact with FaceChat**
-
+**8. Interact with FaceChat**\
     Interact with the AI model and observe the real-time facial animation on the local web interface.
 
 ## Future Enhancements
