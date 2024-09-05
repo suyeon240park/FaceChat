@@ -6,7 +6,7 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 ## Demo
 [Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
 
-![text_demo](https://github.com/user-attachments/assets/5c88fad8-e42e-4e76-845a-42adf2a46d92)
+![text_demo]([https://github.com/user-attachments/assets/5c88fad8-e42e-4e76-845a-42adf2a46d92](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s))
 
 
 ## Features
