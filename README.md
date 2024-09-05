@@ -34,7 +34,7 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 
 ## Usage
 1. Clone the Repository
-Open your terminal and clone the repository.
+    Open your terminal and clone the repository.
     ```
     git clone https://github.com/suyeon240park/FaceChat.git
     ```
@@ -70,13 +70,14 @@ Open your terminal and clone the repository.
     ```
 
 8. Interact with FaceChat
-Interact with the AI model and observe the real-time facial animation on the local web interface.
+
+    Interact with the AI model and observe the real-time facial animation on the local web interface.
 
 ## Future Enhancements
-- Enhanced Mesh Model: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
-- Full-Body Animation: Incorporate head movements and full body gestures.
-- Custom ML Model Development: Develop a machine learning model similar to Audio2Face, trained on large video datasets.
-- Cloud Deployment: Deploy the application on the cloud to increase accessibility and scalability.
+- **Enhanced Mesh Model**: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
+- **Full-Body Animation**: Incorporate head movements and full body gestures.
+- **Custom ML Model Development**: Develop a machine learning model similar to Audio2Face, trained on large video datasets.
+- **Cloud Deployment**: Deploy the application on the cloud to increase accessibility and scalability.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
