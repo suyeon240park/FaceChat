@@ -34,8 +34,10 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 ## Usage
 1. Clone the Repository: git clone https://github.com/yourusername/FaceChat.git
 
-2. Enable virtual enviornments
-    .venv/Script
+2. Activate virtual enviornments
+```
+.venv\Scripts\activate
+```
 
 4. Install Dependencies: Follow the installation instructions for required packages and libraries.
 "C:\Users\lilyl\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py"
