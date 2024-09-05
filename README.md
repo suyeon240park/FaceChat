@@ -1,10 +1,7 @@
 # FaceChat
-FaceChat is an advanced AI-driven application that integrates chatbot functionality, text-to-speech (TTS), and real-time facial animation, leveraging NVIDIA's Audio2Face technology. This comprehensive pipeline allows users to interact with an AI chatbot through text or voice, with responses visualized via synchronized facial animation. FaceChat is designed to provide help for seniors who may struggle with reading or adapting to rapidly evolving technologies and modern people facing loneliness and . The application also has potential applications across diverse industries, including healthcare, customer service, and entertainment.
+FaceChat is an advanced AI-driven application that integrates chatbot functionality, text-to-speech (TTS), and real-time facial animation using NVIDIA's Audio2Face technology. This comprehensive pipeline allows users to interact with an AI chatbot through text or voice, with responses visualized via synchronized facial animation.
 
-
-FaceChat is an AI-driven project that integrates chatbot functionality with real-time facial animation and natural text-to-speech (TTS), powered by NVIDIA's Audio2Face technology. This solution allows users to interact with an AI assistant through text or voice, while synchronized facial animations enhance the experience, making interactions feel more human and engaging.
-
-Originally developed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness. While still in its early stages, FaceChat explores the potential of face-to-face conversational AI in fields like healthcare, customer service, and entertainment.
+While chatbots are widely used with the development of Artificial Intelligence, face-to-face interactions through AI are still emerging; FaceChat is developed to address this gap. Originally designed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness in modern times. While still in its early stages, FaceChat explores the potential of face-to-face conversational AI in fields like healthcare, customer service, and entertainment.
 
 ## Demo
 [Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
