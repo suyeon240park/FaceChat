@@ -4,10 +4,9 @@ FaceChat is an advanced AI-driven application that integrates chatbot functional
 While chatbots are widely used with the development of Artificial Intelligence, face-to-face interactions through AI are still emerging; FaceChat is developed to address this gap. Originally designed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness in modern times. While still in its early stages, FaceChat explores the potential of face-to-face conversational AI in fields like healthcare, customer service, and entertainment.
 
 ## Demo
-[Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
+[Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
-![text_demo](https://github.com/user-attachments/assets/39155820-a99e-44c1-89a7-0098ed3260a1)(https://www.youtube.com/watch?v=jsKBskNUAYM&t=27s)
-
+[![text_demo](https://github.com/user-attachments/assets/39155820-a99e-44c1-89a7-0098ed3260a1)](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
 ## Features
 1. **Text Input**: Users can type messages directly into the chatbox and submit them by pressing Enter.
