@@ -57,10 +57,10 @@ Open your terminal and clone the repository.
 6. Move files
 
     Copy backend folder and replace streaming_server folder at the given directory.
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server
     
     Copy frontend folder and replace web folder at the given directory.
-    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8
+    C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web
 
 6. Open NVDIA Audio2Face application and set a streaming model.
 
