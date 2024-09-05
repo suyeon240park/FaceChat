@@ -56,6 +56,7 @@ Open your terminal and clone the repository.
 5. Install Audio2Face from NVDIA Omniverse Application
    
 6. Move files
+
     Copy backend folder and replace streaming_server folder at the given directory.
     C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server\test_client.py
     
