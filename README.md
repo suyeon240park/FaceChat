@@ -11,32 +11,29 @@ While chatbots are widely used with the development of Artificial Intelligence, 
 
 
 ## Features
-1. **Text Input**: Users can type messages directly into the chatbox
+FaceChat combines advanced emotion-driven text analysis with real-time facial animation for an immersive communication experience.
 
-2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording
+1. **Text Input**: Users can type messages directly into the chatbox.
 
+2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording.
     ![voice](https://github.com/user-attachments/assets/9eaeb275-b00c-4c4e-b914-2c765c92b187)
 
+3. **Speech to Text**: Converts user voice input into text using OpenAI Speech-to-Text functionality and inserts it into the chatbox.
 
-4. **Speech to Text**: Converts user voice input to text components using OpenAI Speech-To-Text functionality and insert them in the chat box.
-
-
-5. **User Input Submission**: A Send button or pressing Enter directs user inputs to the OpenAI Assistants API for processing.
-
+4. **User Input Submission**: A Send button or pressing Enter sends user inputs to the fine-tuned OpenAI Assistants API.
     ![send](https://github.com/user-attachments/assets/95ac17a4-d6a0-4ab4-a5eb-6f0b503e117d)
 
-
-6. **WebSockets Integration**: Utilizes WebSockets to transmit the AI-generated responses from script.js to generate_voice.py for further processing.
-
-7. **Voice Synthesis**: Implements voice generation using a fine-tuned voice model via the ElevenLabs TTS API.
-
-8. **Real-Time Facial Animation**: Sends voice chunks to NVIDIA Audio2Face, which produce natural and synchronized facial animations corresponding to the generated voice.
-
-9. **WebRTC Streaming**: Streams the animated facial model to a locally hosted website using WebRTC, providing real-time visualization of the responses.
-
-10. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
+5. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
 
     ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
+    
+5. **Sentiment Analysis**: The response is analyzed using a sentiment analysis model developed from Google’s GoEmotions dataset, evaluating its emotional tone.
+
+6. **Natural Speech**: The analyzed text is converted into natural-sounding speech using the ElevenLabs TTS (Text-to-Speech) API.
+
+7. **Facial Animation**: The generated speech chunks are sent to the Audio2Face streaming player, which creates corresponding facial animations in real-time.
+
+8 **WebRTC Streaming**: The animations are displayed on a website via WebRTC, providing a seamless and interactive user experience.
 
 
 ## Usage (Window)
