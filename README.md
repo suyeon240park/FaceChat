@@ -35,7 +35,7 @@ FaceChat combines advanced emotion-driven text analysis with real-time facial an
 
 7. **Facial Animation**: The generated speech chunks are sent to the Audio2Face streaming player, which creates corresponding facial animations in real-time.
 
-8 **WebRTC Streaming**: The animations are displayed on a website via WebRTC, providing a seamless and interactive user experience.
+8. **WebRTC Streaming**: The animations are displayed on a website via WebRTC, providing a seamless and interactive user experience.
 
 
 ## Usage (Window)
