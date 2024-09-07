@@ -16,14 +16,16 @@ FaceChat combines advanced emotion-driven text analysis with real-time facial an
 1. **Text Input**: Users can type messages directly into the chatbox.
 
 2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording.
-    ![voice](https://github.com/user-attachments/assets/9eaeb275-b00c-4c4e-b914-2c765c92b187)
 
-3. **Speech to Text**: Converts user voice input into text using OpenAI Speech-to-Text functionality and inserts it into the chatbox.
+   ![voice](https://github.com/user-attachments/assets/9eaeb275-b00c-4c4e-b914-2c765c92b187)
 
-4. **User Input Submission**: A Send button or pressing Enter sends user inputs to the fine-tuned OpenAI Assistants API.
-    ![send](https://github.com/user-attachments/assets/95ac17a4-d6a0-4ab4-a5eb-6f0b503e117d)
+4. **Speech to Text**: Converts user voice input into text using OpenAI Speech-to-Text functionality and inserts it into the chatbox.
 
-5. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
+5. **User Input Submission**: A Send button or pressing Enter sends user inputs to the fine-tuned OpenAI Assistants API.
+
+   ![send](https://github.com/user-attachments/assets/95ac17a4-d6a0-4ab4-a5eb-6f0b503e117d)
+
+7. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
 
     ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
     
