@@ -1,93 +1,128 @@
 # FaceChat: Real-Time Emotion-Driven Text-to-Face Animation
-FaceChat integrates emotion-driven text analysis with real-time facial animation. User inputs are analyzed for sentiment and sent to the fine-tuned OpenAI Assistants API. The generated response is then converted into natural speech using the ElevenLabs TTS API. The speech is then streamed to Audio2Face, which generates corresponding facial animations in real-time, displayed on a website via WebRTC.
 
-While chatbots are widely used with the development of Artificial Intelligence, face-to-face interactions through AI are still emerging. FaceChat is developed to fill this gap. Originally designed to support seniors who find it challenging to read large amounts of text or adapt to fast-changing technologies, FaceChat also aims to provide emotional support to individuals facing loneliness in modern days. While still in its early stages, FaceChat explores the potential of a face-to-face conversational AI service in fields like healthcare, customer service, and entertainment.
+FaceChat is an interactive conversational AI prototype that combines text and voice input, OpenAI Assistants, ElevenLabs text-to-speech, and NVIDIA Audio2Face to generate synchronized facial animation in real time.
 
+The user sends a text or voice message through the web interface. Voice input is transcribed with OpenAI Speech-to-Text, and the resulting text is sent to a configured OpenAI Assistant. The generated response is forwarded to a local WebSocket server, synthesized into speech with ElevenLabs, and streamed to NVIDIA Audio2Face over gRPC. Audio2Face then drives the facial animation rendered through the local WebRTC interface.
+
+FaceChat was built as an HCI prototype exploring more natural and accessible ways to interact with conversational AI. It is not a clinical or healthcare product.
 
 ## Demo
-[Link to Video Demo](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
-[![text_demo](https://github.com/user-attachments/assets/39155820-a99e-44c1-89a7-0098ed3260a1)](https://www.youtube.com/watch?v=jsKBskNUAYM)
+[Watch the video demo](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
+[![FaceChat demo](https://github.com/user-attachments/assets/39155820-a99e-44c1-89a7-0098ed3260a1)](https://www.youtube.com/watch?v=jsKBskNUAYM)
 
 ## Features
-FaceChat combines advanced emotion-driven text analysis with real-time facial animation for an immersive communication experience.
 
-1. **Text Input**: Users can type messages directly into the chatbox.
+1. **Text Input**: Type messages directly into the chat interface.
+2. **Voice Input**: Record voice input using the microphone button or Space bar.
+3. **Speech-to-Text**: Transcribe recorded audio using OpenAI Speech-to-Text.
+4. **Conversational Response**: Send user input to a configured OpenAI Assistant.
+5. **Chat Log**: Display and toggle conversation history in the interface.
+6. **Natural Speech**: Convert assistant responses to speech using the ElevenLabs TTS API.
+7. **Audio2Face Streaming**: Stream generated audio to NVIDIA Audio2Face over gRPC.
+8. **WebRTC Rendering**: Display the animated face through NVIDIA's WebRTC streaming interface.
 
-2. **Voice Input**: Allows voice interaction by clicking the microphone icon or holding the Space bar to start and stop recording.
+> Note: `backend/emotion_analysis.py` and `backend/emotion_colab.ipynb` contain experimental emotion-model work. The active runtime path shown in `frontend/js/script.js` and `backend/streaming_server/send_audio.py` does not currently use that model to control the response pipeline.
 
-   ![voice](https://github.com/user-attachments/assets/9eaeb275-b00c-4c4e-b914-2c765c92b187)
+## Architecture
 
-4. **Speech to Text**: Converts user voice input into text using OpenAI Speech-to-Text functionality and inserts it into the chatbox.
+```text
+Text input ───────────────┐
+                          ├─> OpenAI Assistant ─> WebSocket ─> ElevenLabs TTS
+Microphone -> Speech-to-Text┘                                  |
+                                                               v
+                                                        NVIDIA Audio2Face
+                                                               |
+                                                               v
+                                                        WebRTC animation
+```
 
-5. **User Input Submission**: A Send button or pressing Enter sends user inputs to the fine-tuned OpenAI Assistants API.
+## Local Setup
 
-   ![send](https://github.com/user-attachments/assets/95ac17a4-d6a0-4ab4-a5eb-6f0b503e117d)
-
-7. **Chat Log**: Displays the chat history in the top-left corner. Users can toggle it on or off using the visibility button.
-
-    ![log_demo](https://github.com/user-attachments/assets/15e41699-f049-4181-9306-e4c69fc44264)
-    
-5. **Sentiment Analysis**: The response is analyzed using a sentiment analysis model developed from Google’s GoEmotions dataset, evaluating its emotional tone.
-
-6. **Natural Speech**: The analyzed text is converted into natural-sounding speech using the ElevenLabs TTS (Text-to-Speech) API.
-
-7. **Facial Animation**: The generated speech chunks are sent to the Audio2Face streaming player, which creates corresponding facial animations in real-time.
-
-8. **WebRTC Streaming**: The animations are displayed on a website via WebRTC, providing a seamless and interactive user experience.
-
-
-## Usage (Window)
-**1. Clone the Repository**<br />
-Open the terminal in Visual Studio and run the following command:<br />
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/suyeon240park/FaceChat.git
+cd FaceChat
 ```
 
-**2. Activate the Virtual Environment**<br />
+### 2. Create and activate a virtual environment
+
 ```bash
 python -m venv .venv
+```
+
+Windows:
+
+```bash
 .venv\Scripts\activate
 ```
 
-**3. Install Dependencies**<br />
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install Python dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-**4. Install NVIDIA Omniverse Launcher**<br />
-Download and install it [here](https://www.nvidia.com/en-us/omniverse/).
+### 4. Configure credentials
 
-**5. Install Audio2Face via NVIDIA Omniverse Application**<br />
-Follow the installation instructions provided within the Omniverse Application.
+The prototype expects credentials such as:
 
-**6. Move Files**<br />
-- Copy the `backend` folder and replace the `streaming_server` folder in the following directory:<br />
-  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\exts\omni.audio2face.player\omni\audio2face\player\scripts\streaming_server`<br />
-- Copy the `frontend` folder and replace the `web` folder in the following directory:<br />
-  `C:\Users\{User}\AppData\Local\ov\pkg\audio2face-2023.2.0\extscache\omni.services.streamclient.webrtc-1.3.8\web`
+```text
+API_KEY
+ASSISTANT_ID
+ELEVENLABS_API_KEY
+VOICE_ID
+```
 
-**7. Open NVIDIA Audio2Face Application**<br />
-Set up a streaming model as instructed in the application.
+Do not commit API keys to the repository.
 
-**8. Start the Local Server**<br />
-Run the following command to start a local server:<br />
+The current frontend was originally developed around NVIDIA Audio2Face's local web bundle and therefore assumes a local development environment rather than a production deployment.
+
+### 5. Install NVIDIA Audio2Face
+
+Install a compatible NVIDIA Omniverse/Audio2Face environment and configure a streaming model.
+
+The project was originally developed against Audio2Face 2023.2.0. The included `backend/streaming_server` and `frontend` files were intended to replace the corresponding local Audio2Face streaming server and WebRTC web files.
+
+### 6. Start the audio streaming server
+
+```bash
+python main.py
+```
+
+### 7. Serve the frontend
+
+From the frontend directory or the Audio2Face web directory being used:
+
 ```bash
 python -m http.server
 ```
 
-**9. Interact with FaceChat**<br />
-Access the local web interface to interact with the AI model and observe real-time facial animation.
+Open the local page in a browser and ensure Audio2Face is running.
 
+## Limitations
 
-## Future Enhancements
-- **Enhanced Mesh Model**: Implement a more human-like model with improved background and lighting to create a natural and immersive conversational experience.
-- **Full-Body Animation**: Incorporate head movements and full body gestures.
-- **ML Model Development**: Develop a custom Audio2Human ML model similar to Audio2Face, trained on large video datasets.
-- **Cloud Deployment**: Deploy the application on the cloud to increase accessibility and scalability.
+- The repository is a local prototype rather than a production web service.
+- OpenAI requests are issued from frontend JavaScript in the original implementation. A production architecture should proxy these requests through a backend so API credentials are never exposed to the browser.
+- The Audio2Face integration depends on a specific local NVIDIA application setup.
+- The experimental emotion-analysis code is not currently wired into the active inference path.
 
+## Future Improvements
+
+- move all third-party API calls behind a backend service;
+- integrate emotion analysis into the active response/animation pipeline;
+- replace local application dependencies with deployable services;
+- improve character rendering, lighting, and head/body gestures;
+- add automated tests and configuration validation.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+This project is licensed under the MIT License. See `LICENSE` for details.
