@@ -1,8 +1,8 @@
-# FaceChat: Real-Time Emotion-Driven Text-to-Face Animation
+# FaceChat: Real-Time Conversational AI Avatar
 
 FaceChat is an interactive conversational AI prototype that combines text and voice input, OpenAI Assistants, ElevenLabs text-to-speech, and NVIDIA Audio2Face to generate synchronized facial animation in real time.
 
-The user sends a text or voice message through the web interface. Voice input is transcribed with OpenAI Speech-to-Text, and the resulting text is sent to a configured OpenAI Assistant. The generated response is forwarded to a local WebSocket server, synthesized into speech with ElevenLabs, and streamed to NVIDIA Audio2Face over gRPC. Audio2Face then drives the facial animation rendered through the local WebRTC interface.
+The user sends a text or voice message through the web interface. Voice input is sent to a local Flask backend for OpenAI Speech-to-Text, and text messages are sent through the same backend to a configured OpenAI Assistant. The generated response is then forwarded over a local WebSocket to the ElevenLabs/Audio2Face audio pipeline. Audio2Face drives the facial animation rendered through NVIDIA's WebRTC interface.
 
 FaceChat was built as an HCI prototype exploring more natural and accessible ways to interact with conversational AI. It is not a clinical or healthcare product.
 
@@ -16,27 +16,36 @@ FaceChat was built as an HCI prototype exploring more natural and accessible way
 
 1. **Text Input**: Type messages directly into the chat interface.
 2. **Voice Input**: Record voice input using the microphone button or Space bar.
-3. **Speech-to-Text**: Transcribe recorded audio using OpenAI Speech-to-Text.
-4. **Conversational Response**: Send user input to a configured OpenAI Assistant.
+3. **Speech-to-Text**: Transcribe recorded audio through a local backend proxy using OpenAI Speech-to-Text.
+4. **Conversational Response**: Send user input through the backend to a configured OpenAI Assistant.
 5. **Chat Log**: Display and toggle conversation history in the interface.
-6. **Natural Speech**: Convert assistant responses to speech using the ElevenLabs TTS API.
+6. **Natural Speech**: Convert assistant responses to speech using ElevenLabs TTS.
 7. **Audio2Face Streaming**: Stream generated audio to NVIDIA Audio2Face over gRPC.
 8. **WebRTC Rendering**: Display the animated face through NVIDIA's WebRTC streaming interface.
 
-> Note: `backend/emotion_analysis.py` and `backend/emotion_colab.ipynb` contain experimental emotion-model work. The active runtime path shown in `frontend/js/script.js` and `backend/streaming_server/send_audio.py` does not currently use that model to control the response pipeline.
+> Note: `backend/emotion_analysis.py` and `backend/emotion_colab.ipynb` contain experimental emotion-model work. The active runtime path does not currently use that model to control the response pipeline.
 
 ## Architecture
 
 ```text
-Text input ───────────────┐
-                          ├─> OpenAI Assistant ─> WebSocket ─> ElevenLabs TTS
-Microphone -> Speech-to-Text┘                                  |
-                                                               v
-                                                        NVIDIA Audio2Face
-                                                               |
-                                                               v
-                                                        WebRTC animation
+Text input ------------------------------┐
+                                         v
+Microphone -> Flask backend -> OpenAI Speech-to-Text
+                         |               |
+                         |               v
+                         +--------> OpenAI Assistant
+                                         |
+                                         v
+Browser <--------------------------- text response
+  |
+  v
+WebSocket :8100 -> ElevenLabs TTS -> Audio2Face gRPC :50051
+                                      |
+                                      v
+                               WebRTC animation
 ```
+
+All OpenAI credentials remain in the local Python backend. The browser no longer reads API keys from `process.env` or sends requests directly to OpenAI.
 
 ## Local Setup
 
@@ -71,57 +80,77 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+`pydub` also requires FFmpeg to be installed and available on your system PATH.
+
 ### 4. Configure credentials
 
-The prototype expects credentials such as:
+Copy the environment template:
 
-```text
-API_KEY
-ASSISTANT_ID
-ELEVENLABS_API_KEY
-VOICE_ID
+```bash
+cp .env.example .env
 ```
 
-Do not commit API keys to the repository.
+On Windows PowerShell:
 
-The current frontend was originally developed around NVIDIA Audio2Face's local web bundle and therefore assumes a local development environment rather than a production deployment.
+```powershell
+Copy-Item .env.example .env
+```
 
-### 5. Install NVIDIA Audio2Face
+Then fill in:
 
-Install a compatible NVIDIA Omniverse/Audio2Face environment and configure a streaming model.
+```env
+OPENAI_API_KEY=<your_openai_api_key>
+OPENAI_ASSISTANT_ID=<your_assistant_id>
+ELEVENLABS_API_KEY=<your_elevenlabs_api_key>
+VOICE_ID=<your_elevenlabs_voice_id>
+```
 
-The project was originally developed against Audio2Face 2023.2.0. The included `backend/streaming_server` and `frontend` files were intended to replace the corresponding local Audio2Face streaming server and WebRTC web files.
+Do not commit `.env`.
 
-### 6. Start the audio streaming server
+### 5. Install and configure NVIDIA Audio2Face
+
+FaceChat was originally developed against NVIDIA Audio2Face 2023.2.0. Start an Audio2Face scene with the Streaming Audio Player available on local gRPC port `50051`, and start NVIDIA's WebRTC streaming service for the avatar view.
+
+The included generated gRPC files under `backend/streaming_server` implement the local Audio2Face audio protocol used by the prototype.
+
+### 6. Start FaceChat
 
 ```bash
 python main.py
 ```
 
-### 7. Serve the frontend
+This starts:
 
-From the frontend directory or the Audio2Face web directory being used:
+- the Flask API/static server on `http://127.0.0.1:5000`;
+- the local text-to-speech WebSocket on `ws://127.0.0.1:8100`.
 
-```bash
-python -m http.server
-```
+Open `http://127.0.0.1:5000` in a browser. NVIDIA's WebRTC player may also require its streaming server IP through the existing `?server=<ip-address>` query parameter, depending on the Audio2Face setup.
 
-Open the local page in a browser and ensure Audio2Face is running.
+## Backend API
+
+The local Flask server exposes three small endpoints:
+
+- `GET /api/health` — reports whether required OpenAI configuration is present;
+- `POST /api/transcribe` — accepts a recorded audio file and returns text;
+- `POST /api/chat` — accepts a message and optional Assistant thread ID and returns the assistant response.
+
+The frontend only talks to these same-origin local endpoints, so OpenAI credentials are not exposed to browser JavaScript.
 
 ## Limitations
 
-- The repository is a local prototype rather than a production web service.
-- OpenAI requests are issued from frontend JavaScript in the original implementation. A production architecture should proxy these requests through a backend so API credentials are never exposed to the browser.
-- The Audio2Face integration depends on a specific local NVIDIA application setup.
-- The experimental emotion-analysis code is not currently wired into the active inference path.
+- The repository is a local prototype rather than a deployable production service.
+- The Audio2Face integration depends on NVIDIA's local application and WebRTC setup.
+- The experimental emotion-analysis code is not wired into the active inference path.
+- The project uses the OpenAI Assistants workflow and dependency versions from the period in which the prototype was developed; a modern production rewrite should use the current supported OpenAI API surface.
+- There are no automated integration tests for the external OpenAI, ElevenLabs, Audio2Face, or WebRTC services.
 
 ## Future Improvements
 
-- move all third-party API calls behind a backend service;
-- integrate emotion analysis into the active response/animation pipeline;
-- replace local application dependencies with deployable services;
-- improve character rendering, lighting, and head/body gestures;
-- add automated tests and configuration validation.
+- replace the local NVIDIA application dependency with a deployable animation service;
+- integrate emotion analysis only after evaluating whether it improves the interaction experience;
+- add backend authentication, request validation, rate limiting, and structured logging;
+- add automated unit tests plus mocked integration tests for external services;
+- improve character rendering, lighting, and head/body gestures.
 
 ## License
 
